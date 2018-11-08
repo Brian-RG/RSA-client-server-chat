@@ -12,6 +12,7 @@ def eratosthenes2(n):
         if i not in multiples:
             yield i
             multiples.update(range(i*i, n+1, i))
+##eratosthenes2 code taken from https://stackoverflow.com/questions/33395903/efficient-method-for-generating-lists-of-large-prime-numbers
 
 def gcd(a,b):
     if(not a):
