@@ -9,7 +9,6 @@ def eratosthenes2(n):
         if i not in multiples:
             yield i
             multiples.update(range(i*i, n+1, i))
-#eratosthenes2 code taken from https://stackoverflow.com/questions/33395903/efficient-method-for-generating-lists-of-large-prime-numbers
 
 def gcd(a,b):
     if(not a):
@@ -18,9 +17,10 @@ def gcd(a,b):
         return a
     return gcd(b,a%b)
 
-li=r(250,300)
+li=r(500,600)
 l=list(eratosthenes2(li))
-l=l[25:]
+l=l[80:]
+#print(l)
 pp=pl(l)
 q=pl(l)
 n=pp*q
@@ -32,6 +32,14 @@ while(e<f):
         break
     else:
         e+=1
+        
+d=1
+while(1):
+    if((d*e)%f==1):
+        break
+    d+=1
+
+'''
 k=0
 while(1):
     z=(k*f)+1
@@ -41,6 +49,7 @@ while(1):
     else:
         d=((k*f)+1)//e     
         break
+'''
 
 def encrypt(s,n,e):
     r=""
